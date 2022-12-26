@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preload" href="/Ejercicios Propios/Calculadora/css/normalize.css" as="style">
+    <link rel="stylesheet" href="/Ejercicios Propios/Calculadora/css/normalize.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="preload" href="/Ejercicios Propios/Calculadora/css/styles.css" as="style">
+    <link rel="stylesheet" href="/Ejercicios Propios/Calculadora/css/styles.css">
+
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class="calculadora">
+        <div class="resultados grid-2-Col">
+            <input disabled class="acumulativo label color-primario" type="text" name="" id="acumulativo" value="">
+            <input disabled class="parcial label color-primario" type="text" name="" id="final" value="0">
+        </div>
+        <div class="operadores">
+            
+            <button onclick="AllClear()" type="submit" class="operadores-boton color-primario" value="AC">AC</button>
+            <button onclick="Resultado()" type="submit" class="operadores-boton color-primario">=</button>
+            <button onclick="operador(value)" type="submit" class="operadores-boton color-primario" value="/">/</button>
+            <button onclick="operador(value)" type="submit" class="operadores-boton color-primario" value="*">x</button>
+            <button onclick="operador(value)" type="submit" class="operadores-boton color-primario" value="-">-</button>
+            <button onclick="operador(value)" type="submit" class="operadores-boton color-primario" value="+">+</button>
+            <button onclick="Actumulativo(value)" type="submit" class="operadores-boton color-primario" value="7">7</button>
+            <button onclick="Actumulativo(value)" type="submit" class="operadores-boton color-primario" value="8">8</button>
+            <button onclick="Actumulativo(value)" type="submit" class="operadores-boton color-primario" value="9">9</button>
+            <button onclick="Actumulativo(value)" type="submit" class="operadores-boton color-primario" value="4">4</button>
+            <button onclick="Actumulativo(value)" type="submit" class="operadores-boton color-primario" value="5">5</button>
+            <button onclick="Actumulativo(value)" type="submit" class="operadores-boton color-primario" value="6">6</button>
+            <button onclick="Actumulativo(value)" type="submit" class="operadores-boton color-primario" value="1">1</button>
+            <button onclick="Actumulativo(value)" type="submit" class="operadores-boton color-primario" value="2">2</button>
+            <button onclick="Actumulativo(value)" type="submit" class="operadores-boton color-primario" value="3">3</button>
+            <button onclick="Delete()" type="submit" class="operadores-boton color-primario" value="Del">Del</button>
+            <button onclick="Actumulativo(value)" type="submit" class="operadores-boton color-primario" value="0">0</button>
+            <button onclick="Actumulativo(value)" type="submit" class="operadores-boton color-primario" value=".">.</button>
+        </div>
+    </div>
+
+    <script src="/Ejercicios Propios/Calculadora/js/scripts.js"></script>
+</body>
+</html>

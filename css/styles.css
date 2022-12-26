@@ -1,0 +1,98 @@
+:root{
+    --primary: #212121;
+    --secundario: #757575;
+    --terciario: #e5ecf3;
+    --blanco: #ffffff;
+    --amarillo: #ffc107;
+
+    --fuente-principal: 3.8rem;
+    --fuente-secundaria: 2rem;
+    --fuente-terciaria: 1rem;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    /* 1 rem = 10px*/
+    font-family: 'Roboto', sans-serif;
+    /*(1, 2,3) 1.Hacia dónde va en direccion,
+    2. de qué color a qué color va,
+    3 el color final
+    Esto es un degradado de colores. En este caso de abajo hacia arriba*/
+    background-image: linear-gradient(to top, var(--grisFondo) 0%, var(--blanco) 20%);
+    min-width: 50rem;
+}
+
+
+.calculadora{
+    margin: 3rem auto;
+    width: 24rem;
+    height: 30rem;
+    padding: 0;
+}
+
+/* CSS globales */
+
+.color-primario{
+    background-color: var(--primary);
+    color: var(--terciario);
+}
+
+
+
+/* Labels para mostrar resultados parciales, finales y sumatorias de operaciones*/
+
+.resultados{
+    width: 100%;
+    height: 8rem;    
+    background-color: var(--secundario);
+    display: block;
+}
+
+.label{
+    width: 100%;
+    text-align: right;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.acumulativo{
+    height: 25%;
+    font-size: var(--fuente-terciaria);
+}
+
+.parcial{
+    height: 75%;
+    font-size: var(--fuente-principal);
+}
+
+.grid-cero{
+    grid-column: 1 / 3;
+}
+
+/* Posicionamiento Grid */
+
+.operadores{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* CSS de Botones  */
+
+
+.operadores-boton{
+    height: 5rem;
+    border: .5px var(--secundario) solid;
+}
+
+.operadores-boton:hover{
+    background-color: var(--secundario);
+    cursor: pointer;
+}
