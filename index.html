@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/Calculadora/css/normalize.css">
+    <link rel="stylesheet" href="/Calculadora/css/styles.css">
+
+
+    <title>Calculadora</title>
+</head>
+
+<body>
+
+    <div class="contenedor centrar">
+        <div class="calculador">
+            <section class="operaciones no-border">
+                <input type="text" name="" id="acumulador" class="muestra acumulador no-border ">
+                <input type="text" name="" id="resultado" class="resultado muestra no-border">
+            </section>
+            <section class="botones no-border">
+                
+                <button type="submit" class="boton no-border" id="C" onclick="clearLastOne()">C</button>
+                <button type="submit" class="boton no-border" id="AC" onclick="clearScreen()">AC</button>
+                <button type="submit" class="boton no-border" id="C" onclick="operacionSigno(value)" value="√">√</button>
+
+                <button type="submit" class="boton no-border" id="AC" onclick="operacionSigno(value)" value="∛">∛</button>
+                <button type="submit" class="boton no-border" id="sum" onclick="operacionSigno(value)" value="^">^</button>
+                <button type="submit" class="boton no-border" id="sum" onclick="operacionSigno(value)" value="+">+</button>
+
+                <button type="submit" class="boton no-border" id="div" onclick="operacionSigno(value)" value="/">/</button>
+                <button type="submit" class="boton no-border" id="mul" onclick="operacionSigno(value)" value="*">x</button>
+                <button type="submit" class="boton no-border" id="res" onclick="operacionSigno(value)" value="-">-</button>
+
+                <button type="submit" class="boton no-border" id="siete" onclick="operador(value)" value="7">7</button>
+                <button type="submit" class="boton no-border" id="ocho" onclick="operador(value)" value="8">8</button>
+                <button type="submit" class="boton no-border" id="nueve" onclick="operador(value)" value="9">9</button>
+
+                <button type="submit" class="boton no-border" id="cuatro" onclick="operador(value)" value="4">4</button>
+                <button type="submit" class="boton no-border" id="cinco" onclick="operador(value)" value="5">5</button>
+                <button type="submit" class="boton no-border" id="seis" onclick="operador(value)" value="6">6</button>
+
+                <button type="submit" class="boton no-border" id="uno" onclick="operador(value)" value="1">1</button>
+                <button type="submit" class="boton no-border" id="dos" onclick="operador(value)" value="2">2</button>
+                <button type="submit" class="boton no-border" id="tres" onclick="operador(value)" value="3">3</button>
+
+                <button type="submit" class="boton no-border" id="cero" onclick="operador(value)" value="0">0</button>
+                <button type="submit" class="boton no-border" id="coma" onclick="operador(value)" value=".">.</button>
+                <button type="submit" class="boton no-border" id="enter" onclick="operacion()">=</button>
+            </section>
+        </div>
+    </div>
+
+    <script src="/Calculadora/js/calculador.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+:root{
+    --color-botones: #0e0e0e ;
+    --color-fondo: #404040 ;
+    --color-acumluador:  #dedede;
+    --color-resultado:  #ffffff;
+}
+
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    /* 1 rem = 10px*/
+    font-family: 'Roboto', sans-serif;
+    /*(1, 2,3) 1.Hacia dónde va en direccion,
+    2. de qué color a qué color va,
+    3 el color final
+    Esto es un degradado de colores. En este caso de abajo hacia arriba*/
+    background-image: linear-gradient(to top, var(--grisFondo) 0%, var(--blanco) 20%);
+    min-width: 50rem;
+}
+
+.no-border{
+    border: none;
+}
+
+.contenedor{
+    width: 100%;
+    height: 700px;
+}
+
+.calculador{
+    width: 310px;
+    height: auto;
+    background-color: var(--color-fondo);
+}
+
+.centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.operaciones,
+.botones{
+    width: 100%;
+}
+
+.operaciones{
+    width: 100%;
+    height: 100px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-color: var(--color-fondo);
+}
+
+.muestra{
+    background-color: var(--color-fondo);
+}
+
+.acumulador{
+    font-size: 18px;
+    color: var(--color-acumluador);
+    padding: 0 10px 0 10px;
+}
+
+.resultado{
+    font-size: 16px;
+    color: var(--color-resultado);
+    text-align: right;
+    padding: 0 10px 0 10px;
+}
+
+.botones{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    justify-items: center;
+    align-items: center;
+}
+
+.boton{
+    width: 90px;
+    height: 60px;
+    background-color: var(--color-botones);
+    color: var(--color-resultado);
+}
