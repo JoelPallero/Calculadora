@@ -1,8 +1,7 @@
 //operaciones de resultado y acumulacion
 let operando = false;
-let num = [];
 let coma = false;
-let strAcum;
+let num = [];
 
 //Funcion para tomar el value de cada boton de numeros presionado
 //incluyendo el punto
@@ -102,6 +101,7 @@ const operacionSigno = (signoElegido) => {
         }
         num[3] = num[0] + ' ' + signoElegido + ' ';
         document.getElementById('acumulador').value = num[3];
+        coma = false;
     }
 }
 
@@ -152,33 +152,34 @@ const clearScreen = () => {
     num = [];
 }
 
+//Borrador del ultimo caracter de la cadena de operacion
 const clearLastOne = () =>{
-    acumulador = document.getElementById('acumulador').value;
-    toString(acumulador);    
-
-    if(num[1] != null){
-        toString(num[1]);
-        acumulador = acumulador.substring(0, acumulador.length -1);
+    if (num[1].length > 0) {
+        let c = getCharAt(num[1]);
+        if(c == '.'){
+            coma = false;
+        }
         num[1] = num[1].substring(0, num[1].length -1);
-        if(num[1].length == 0){
-            num[1] = null;
+        num[3] = num[3].substring(0, num[3].length -1);
+
+    }else{
+        if (num[2].length > 0) {
+            num[2] = num[2].substring(0, num[2].length -1);
+            num[3] = num[3].substring(0, num[3].length -3);
+            if (num[2].length = 0) {
+                operando = false;                
+            }
+        }else{
+            let c = getCharAt(num[0]);
+            if(c == '.'){
+                coma = false;
+            }
+            num[0] = num[0].substring(0, num[0].length -1);
+            num[3] = num[3].substring(0, num[3].length -1);
         }
-    }
-    else if(num[1] == null && num[2] != null){
-        num[3] = num[3].substring(0, num[3].length -3);
-        num[2] = null;
-        operando = false;
-    }
-    else{
-        toString(num[0]);
-        acumulador = acumulador.substring(0, acumulador.length -1);
-        num[0] = num[0].substring(0, num[0].length -1);
-        if(num[0].length == 0){
-            num[0] = null;
-            acumulador = null;
-        }
-    }
-    document.getElementById('acumulador').value = acumulador;
+    }    
+
+    document.getElementById('acumulador').value = num[3];
 }
 
 //obtener el ultimo caracter de una cadena de texto
