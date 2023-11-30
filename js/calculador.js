@@ -15,59 +15,55 @@ function operador(queHago){
 // Aca vamos a rellenar el array que va a contener los datos para operar
 // num[0] es el primer numero y num[1] es el segundo.
 const acumular = function(agregar){
-    if (!operando) {
-        if (num[0] == undefined) {
-            num[0] = agregar;
-            num[3] = agregar;
-        }
-        else if (agregar == '.' && !coma) {
-            num[0] += '.';
-            parseFloat(num[0]);            
-            num[3] += agregar;
-            coma = true;
-        }
-        else{
-            if(agregar != '.'){
-                num[0] += agregar;
-                num[3] += agregar;
-            }
-        }
+
+    //Hacer que despues de un tiempo de 30s
+    //Cualquier digitacion numerica, haga resetear variables
+    //y realizar operacioes como si recie se encendiera la calculadora.
+    if(operando && num[4] != null || num[4] != undefined){
+        clearScreen();
+        operando = false;
+        acumular();
     }else{
-        if (num[1] == null){
-            num[1] = agregar;
-            num[3] += agregar;
-        }else if (agregar == '.' && !coma) {
-            num[1] += '.';
-            parseFloat(num[1])
-            num[3] += agregar;
-            coma = true;
-        }
-        else{
-            if(agregar != '.'){
-                num[1] += agregar;
-                num[3] += agregar;
+        if (!operando) {
+            if (num[0] == undefined) {
+                num[0] = agregar;
+                num[3] = agregar;
             }
-        }        
+            else if (agregar == '.' && !coma) {
+                num[0] += '.';
+                parseFloat(num[0]);            
+                num[3] += agregar;
+                coma = true;
+            }
+            else{
+                if(agregar != '.'){
+                    num[0] += agregar;
+                    num[3] += agregar;
+                }
+            }
+        }else{
+            if (num[1] == null){
+                num[1] = agregar;
+                num[3] += agregar;
+            }else if (agregar == '.' && !coma) {
+                num[1] += '.';
+                parseFloat(num[1])
+                num[3] += agregar;
+                coma = true;
+            }
+            else{
+                if(agregar != '.'){
+                    num[1] += agregar;
+                    num[3] += agregar;
+                }
+            }        
+        }
+        document.getElementById('acumulador').value = num[3];
     }
-    document.getElementById('acumulador').value = num[3];
 }
 
 //num[2] es el donde va el signo de la operacion
 const operacionSigno = (signoElegido) => {
-    /* CONDICIONEALES PARA ASIGNACION O CAMBIO DE SIGNO */
-
-    // 1 Asignar el signo elegido POR PRIMERA VEZ: 1 Si el signo es cualquiera de las raices o 2 si es cualquiera de los otros signos
-    /*
-        condiciones
-        Es raiz? & 
-            si -> resultado == null
-                    si -> Registrar signo
-                          Esperar numA para dar resultado.
-                    no -> numA = resultado
-                          realizar raiz al resultado
-                          mostrar el resutlado
-            no -> 3    
-    */
     operando = true;
     //Verificacion para saber si el signo es una raiz
     if(signoElegido == '√' || signoElegido == '∛'){
@@ -84,9 +80,13 @@ const operacionSigno = (signoElegido) => {
         document.getElementById('acumulador').value = num[3];
     }
     else{
+        //
         if(num[4] != undefined || num[4] != null){
             num[0] = parseFloat(document.getElementById('resultado').value);
             num[2] = signoElegido;
+            document.getElementById('resultado').value = '';
+            num[1] = undefined;
+            num[4] = undefined;
         }
         else{
             if(num[1] != undefined || num[1] != null){
@@ -95,10 +95,11 @@ const operacionSigno = (signoElegido) => {
                 num[2] = signoElegido;
             }
             else{
-                num[2] = signoElegido;                
+                num[2] = signoElegido;
             }
         }
         num[3] = num[0] + ' ' + signoElegido + ' ';
+        document.getElementById('acumulador').value = num[3];
     }
 
 
