@@ -79,15 +79,15 @@ body {
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5px;
     justify-items: center;
     align-items: center;
 }
 
 .boton{
-    width: 90px;
-    height: 60px;
+    width: 64px;
+    height: 35px;
     background-color: var(--color-botones);
     color: var(--color-resultado);
 }
