@@ -15,9 +15,6 @@ function operador(queHago){
 // num[0] es el primer numero y num[1] es el segundo.
 const acumular = function(agregar){
 
-    //Hacer que despues de un tiempo de 30s
-    //Cualquier digitacion numerica, haga resetear variables
-    //y realizar operacioes como si recie se encendiera la calculadora.
     if(operando && num[4] != null || num[4] != undefined){
         clearScreen();
         operando = false;
