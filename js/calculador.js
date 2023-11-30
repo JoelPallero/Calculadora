@@ -22,7 +22,7 @@ const acumular = function(agregar){
     if(operando && num[4] != null || num[4] != undefined){
         clearScreen();
         operando = false;
-        acumular();
+        acumular(agregar);
     }else{
         if (!operando) {
             if (num[0] == undefined) {
@@ -80,7 +80,6 @@ const operacionSigno = (signoElegido) => {
         document.getElementById('acumulador').value = num[3];
     }
     else{
-        //
         if(num[4] != undefined || num[4] != null){
             num[0] = parseFloat(document.getElementById('resultado').value);
             num[2] = signoElegido;
@@ -93,6 +92,9 @@ const operacionSigno = (signoElegido) => {
                 operacion();
                 num[0] = parseFloat(document.getElementById('resultado').value);
                 num[2] = signoElegido;
+                num[1] = undefined;
+                num[4] = undefined;
+                
             }
             else{
                 num[2] = signoElegido;
@@ -101,43 +103,6 @@ const operacionSigno = (signoElegido) => {
         num[3] = num[0] + ' ' + signoElegido + ' ';
         document.getElementById('acumulador').value = num[3];
     }
-
-
-    // 2 Reemplazar un signo elegido, mientras que la última actividad dada haya sido un signo.
-    /*
-        condiciones
-        signoElegido seleccionado? & numB == null?
-        si -> 4
-        no -> numB != null?
-                realizar operacion
-                resultado se asigna a numA
-                signoElegido nuevo
-                numB == null
-    */
-
-    // 3 Asignar por segunda vez un signo cuando el resultado esté dado: Esto haria que el resultado se asigne como el primer dato al momento de apretar el signo.
-    /*
-        condiciones
-        resultado dado?
-        -- si-> resultado se asigna a numA
-                signo es == raiz?
-                si -> realizar operacion. radicando = resultado
-                   mostrar resultado
-                no -> 4
-        -- no -> 2 -> no
-    */
-
-        // -------
-    
-
-    
-   // 4 Flujo normal de eleccion del signo
-   /*
-   condiciones
-        numA != null? && signo != raiz
-        si -> signo = signoElegido
-        no -> no hacer nada   
-   */
 }
 
 //Se ejecuta con el igual, '=', para ya realizar la operacion final
